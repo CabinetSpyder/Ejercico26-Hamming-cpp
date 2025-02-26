@@ -11,12 +11,12 @@ TEST_CASE("single letter identical strands", "[hamming][54681314-eee2-439a-9db0-
     REQUIRE(0 == hamming::compute("A", "A"));
 }
 
-#if defined(EXERCISM_RUN_ALL_TESTS)
+
 TEST_CASE("empty strands", "[hamming][f6dcb64f-03b0-4b60-81b1-3c9dbf47e887]")
 {
     REQUIRE(0 == hamming::compute("", ""));
 }
-
+//
 TEST_CASE("single letter different strands", "[hamming][294479a3-a4c8-478f-8d63-6209815a827b]")
 {
     REQUIRE(1 == hamming::compute("G", "T"));
@@ -51,4 +51,5 @@ TEST_CASE("disallow empty second strand", "[hamming][9ab9262f-3521-4191-81f5-0ed
 {
     REQUIRE_THROWS_AS(hamming::compute("G", ""), std::domain_error);
 }
+#if defined(EXERCISM_RUN_ALL_TESTS)
 #endif
